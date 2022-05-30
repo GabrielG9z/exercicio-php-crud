@@ -1,3 +1,9 @@
+<?php
+if(isset($_POST['inserir'])){
+	// Importando as funções e a conexão
+	require_once "../src/funcoes-alunos.php";
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,16 +18,16 @@
     <hr>
     		
     <p>Utilize o formulário abaixo para cadastrar um novo aluno.</p>
-
+<!-- Todos os campos devem ter a tag name, pois o php só consegue ler os campos com o atributo name, os botões também -->
 	<form action="#" method="post">
 	    <p><label for="nome">Nome:</label>
-	    <input type="text" id="nome" required></p>
+	    <input name="" type="text" id="nome" required></p>
         
       <p><label for="primeira">Primeira nota:</label>
-	    <input type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
+	    <input name="" type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
 	    
 	    <p><label for="segunda">Segunda nota:</label>
-	    <input type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
+	    <input name="" type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
 	    
       <button>Cadastrar aluno</button>
 	</form>
