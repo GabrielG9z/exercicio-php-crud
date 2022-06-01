@@ -1,3 +1,6 @@
+<?php require_once "src/funcoes-alunos.php";
+$listaDeAlunos = lerAlunos($conexao);
+ ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,6 +13,21 @@
 <div class="container">
     <h1>Lista de alunos</h1>
     <hr>
+<?php
+
+foreach($listaDeAlunos as $aluno) {?>
+<table>
+    <tr>
+        <td>Nome: <?=$aluno['nome'];?></td>
+        <td>Primeira Nota: <?=$aluno['nota1'];?></td>
+        <td>Segunda Nota: <?=$aluno['nota2'];?></td>
+        <td>Média: <?=$aluno['media'];?></td>
+        <td>Situação: <?=$aluno['situacao'];?></td>
+    </tr>
+</table>
+<?php
+};?>
+
     <p><a href="inserir.php">Inserir novo aluno</a></p>
 
    <!-- Aqui você deverá criar o HTML que quiser e o PHP necessários
