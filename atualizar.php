@@ -1,3 +1,13 @@
+<?php
+require_once "src/funcoes-alunos.php";
+$listaDeAlunos = lerAlunos($conexao);
+
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+
+$produto = lerUmAluno($conexao, $id);
+
+if(isset($_POST['atualizar']))
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
