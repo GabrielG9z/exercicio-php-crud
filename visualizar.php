@@ -19,12 +19,24 @@ foreach($listaDeAlunos as $aluno) {?>
 <table>
     <tr>
         <td>Nome: <?=$aluno['nome'];?></td>
+        
+    </tr>
+    <tr>
         <td>Primeira Nota: <?=$aluno['nota1'];?></td>
+    </tr>
+    <tr>
         <td>Segunda Nota: <?=$aluno['nota2'];?></td>
+    </tr>
+    <tr>
         <td>Média: <?=$aluno['media'];?></td>
+    </tr>
+    <tr>
         <td>Situação: <?=$aluno['situacao'];?></td>
     </tr>
+
 </table>
+<a href="atualizar.php?id=<?=$aluno['id']?>">Atualizar</a>
+<a href="excluir.php?id=<?=$aluno['id']?>">Excluir</a>
 <?php
 };?>
 

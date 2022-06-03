@@ -44,16 +44,32 @@ function lerUmAluno(PDO $conexao, int $id):array{
     return $result;
 }
 
-function atualizarAluno(PDO $conexao, int $id, $nome):void{
-    $sql = "UPDATE alunos SET nome = :nome , primeira_nota = nota1, segunda_nota = nota2 WHERE id = :id";
+function atualizarAluno(PDO $conexao, int $id, string $nome, float $primeiraNota, float $segundaNota, float $media, string $situacao):void{
+    $sql = "UPDATE alunos SET nome = :nome , primeira_nota = :nota1, segunda_nota = :nota2, media = :media, situacao = :situacao WHERE id = :id";
+
+    try {
+        $consulta = $conexao->prepare($sql);
+        $consulta->bindParam(':id', $id, PDO::PARAM_INT);
+        $consulta->bindParam(':nome',$nome, PDO::PARAM_STR);
+       $consulta->bindParam(':nota1',$primeiraNota, PDO::PARAM_STR);
+       $consulta->bindParam(':nota2',$segundaNota, PDO::PARAM_STR);
+       $consulta->bindParam(':media',$media, PDO::PARAM_STR);
+       $consulta->bindParam(':situacao',$situacao, PDO::PARAM_STR);      
+        $consulta->execute();
+    } catch (Exception $erro) {
+        die("Erro :".$erro->getMessage());
+    }
+
+}
+
+function excluirProduto(PDO $conexao, int $id):void{
+    $sql = "DELETE FROM alunos WHERE id = :id";
 
     try {
         $consulta = $conexao->prepare($sql);
         $consulta->bindParam(':id', $id, PDO::PARAM_INT);
         $consulta->execute();
-        $result = $consulta->fetch(PDO::FETCH_ASSOC);
     } catch (Exception $erro) {
-        die("Erro :".$erro->getMessage());
+        die("Erro: ". $erro->getMessage());
     }
-    return $result;
 }

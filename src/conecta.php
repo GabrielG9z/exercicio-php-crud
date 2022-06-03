@@ -1,9 +1,9 @@
 
 <?php
 $server = "localhost";
-$user = "root";
-$password = "";
-$database = "crud_escola_gabriel_genovez";
+$user = "webmaio_genovez";
+$password = "Gabriel77junho";
+$database = "webmaio_genvoez";
 
 try {
     // Criando a conexão com o MySQL (API de conexão)
