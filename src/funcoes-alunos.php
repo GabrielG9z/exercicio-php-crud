@@ -62,7 +62,7 @@ function atualizarAluno(PDO $conexao, int $id, string $nome, float $primeiraNota
 
 }
 
-function excluirProduto(PDO $conexao, int $id):void{
+function excluirAluno(PDO $conexao, int $id):void{
     $sql = "DELETE FROM alunos WHERE id = :id";
 
     try {
