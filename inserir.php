@@ -16,7 +16,7 @@ if(isset($_POST['inserir'])){
 
 	inserirAlunos($conexao, $nome, $primeiraNota, $segundaNota,$media,$situacao);
 
-	header("location:visualizar.php");
+	header("location:visualizar.php?status=sucesso");
 }
 ?>
 <!DOCTYPE html>
